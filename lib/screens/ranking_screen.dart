@@ -37,73 +37,56 @@ class _RankingScreenState
 
       appBar: AppBar(
         title: const Text(
-          'FIFA Predictor',
+          "Mundial 2026",
         ),
       ),
 
       body: Center(
 
-        child: provider.isLoading
+        child: provider.cargando
 
             ? const CircularProgressIndicator()
 
             : provider.lider == null
 
                 ? const Text(
-                    'Sin datos',
+                    "No hay datos",
                   )
 
-                : Card(
+                : Column(
 
-                    elevation: 5,
+                    mainAxisAlignment:
+                        MainAxisAlignment.center,
 
-                    child: Padding(
+                    children: [
 
-                      padding:
-                          const EdgeInsets.all(20),
-
-                      child: Column(
-
-                        mainAxisSize:
-                            MainAxisSize.min,
-
-                        children: [
-
-                          const Text(
-                            '🏆 Líder del Mundial',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight:
-                                  FontWeight.bold,
-                            ),
-                          ),
-
-                          const SizedBox(
-                            height: 20,
-                          ),
-
-                          Text(
-                            provider.lider!.nombre,
-                            style:
-                                const TextStyle(
-                              fontSize: 30,
-                            ),
-                          ),
-
-                          const SizedBox(
-                            height: 10,
-                          ),
-
-                          Text(
-                            '${provider.lider!.aciertos} aciertos',
-                            style:
-                                const TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                        ],
+                      const Text(
+                        "🏆 Líder del Mundial",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight:
+                              FontWeight.bold,
+                        ),
                       ),
-                    ),
+
+                      const SizedBox(height: 30),
+
+                      Text(
+                        provider.lider!.nombre,
+                        style: const TextStyle(
+                          fontSize: 24,
+                        ),
+                      ),
+
+                      const SizedBox(height: 10),
+
+                      Text(
+                        "${provider.lider!.aciertos} aciertos",
+                        style: const TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
       ),
     );

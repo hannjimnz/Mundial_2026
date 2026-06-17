@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'providers/ranking_providers.dart';
+import 'providers/ranking_provider.dart';
 import 'screens/ranking_screen.dart';
 
 void main() {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      title: 'FIFA Predictor',
+      title: "Mundial 2026",
 
       theme: ThemeData(
         useMaterial3: true,

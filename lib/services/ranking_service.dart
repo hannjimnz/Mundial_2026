@@ -13,8 +13,7 @@ class RankingService {
 
   Future<Lider> obtenerLider() async {
 
-    final response =
-        await dio.get('/lider');
+    final response = await dio.get('/lider');
 
     return Lider.fromJson(response.data);
   }

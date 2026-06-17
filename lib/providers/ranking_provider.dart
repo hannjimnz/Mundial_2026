@@ -10,11 +10,11 @@ class RankingProvider extends ChangeNotifier {
 
   Lider? lider;
 
-  bool isLoading = false;
+  bool cargando = false;
 
   Future<void> cargarLider() async {
 
-    isLoading = true;
+    cargando = true;
     notifyListeners();
 
     try {
@@ -24,11 +24,13 @@ class RankingProvider extends ChangeNotifier {
 
     } catch (e) {
 
-      debugPrint(e.toString());
+      print(e);
+
+    } finally {
+
+      cargando = false;
+      notifyListeners();
 
     }
-
-    isLoading = false;
-    notifyListeners();
   }
 }

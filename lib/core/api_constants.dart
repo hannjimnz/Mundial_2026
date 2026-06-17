@@ -1,5 +1,10 @@
 class ApiConstants {
 
-  static const String baseUrl = 'http://31.97.102.106:3000/api';
+  // Emulador Android Studio
+  static const String baseUrl =
+      "http://10.0.2.2:8000";
 
+  // Si usas celular físico:
+  // static const String baseUrl =
+  // "http://192.168.X.X:8000";
 }

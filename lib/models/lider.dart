@@ -9,10 +9,9 @@ class Lider {
   });
 
   factory Lider.fromJson(Map<String, dynamic> json) {
-
     return Lider(
-      nombre: json['nombre'],
-      aciertos: json['aciertos'],
+      nombre: json["nombre"],
+      aciertos: json["aciertos"],
     );
   }
 }
