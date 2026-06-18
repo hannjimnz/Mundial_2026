@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/lider.dart';
+import '../models/ranking.dart';
 import '../services/ranking_service.dart';
 
 class RankingProvider extends ChangeNotifier {
@@ -8,19 +8,19 @@ class RankingProvider extends ChangeNotifier {
   final RankingService _service =
       RankingService();
 
-  Lider? lider;
+  List<Ranking> ranking = [];
 
   bool cargando = false;
 
-  Future<void> cargarLider() async {
+  Future<void> cargarRanking() async {
 
     cargando = true;
     notifyListeners();
 
     try {
 
-      lider =
-          await _service.obtenerLider();
+      ranking =
+          await _service.obtenerRanking();
 
     } catch (e) {
 

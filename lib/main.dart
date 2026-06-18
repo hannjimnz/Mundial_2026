@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
 
       theme: ThemeData(
         useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF5F5F5),
       ),
 
       home: const RankingScreen(),
